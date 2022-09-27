@@ -1,0 +1,11 @@
+### config
+GET http://localhost:8080/config
+
+### random
+http://localhost:8080/ads?sort=random
+
+### priority
+http://localhost:8080/ads?sort=priority
+
+### mixed
+http://localhost:8080/campaigns?sort=mixed&userId=1

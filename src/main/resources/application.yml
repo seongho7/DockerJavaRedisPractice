@@ -1,0 +1,36 @@
+server:
+  shutdown: graceful
+
+spring:
+  sql:
+    init:
+      mode: never
+  # Redis
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: 6379
+  datasource:
+    hikari:
+      pool-name: HikariCp
+      maximum-pool-size: 4
+      minimum-idle: 4
+    username: sh
+    password: 1234
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/sh?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&enabledTLSProtocols=TLSv1.2
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+      hibernate.dialect.storage_engine: innodb
+      hibernate.query.in_clause_parameter_padding: true
+    open-in-view: false
+  properties:
+    hibernate:
+      format_sql: true
+  flyway:
+    enabled: true
+
+logging.level:
+  org.hibernate.SQL: debug
