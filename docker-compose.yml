@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   redis:
-    container_name: ad-service-redis
+    container_name: docker-java-redis
     image: redis:alpine
     hostname: hostname-redis
     ports:
       - "6379:6379"
   
   mysql: # See Also: https://hub.docker.com/_/mysql
-    container_name: ad-service-mysqldb
+    container_name: docker-java-mysqldb
     image: mysql
     hostname: hostname-mysql
     command: --default-authentication-plugin=mysql_native_password
@@ -23,8 +23,8 @@ services:
       - "3306:3306"
 
   app:
-    container_name: ad-service-practice
-    image: ad-service-practice
+    container_name: docker-java-redis-practice
+    image: docker-java-redis-practice
     build: .
     volumes:
       - .:/app

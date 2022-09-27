@@ -52,7 +52,7 @@ http://localhost:8080/config
 ## 도커 컨테이너 중지
 ```bash
 docker container ls # 실행중인 컨테이너 확인
-docker container stop ad-service-practice # 애플리케이션 중지
-docker container stop ad-service-mysql # mysql 중지
-docker container stop ad-service-redis # redis 중지
+docker container stop docker-java-redis-practice # 애플리케이션 중지
+docker container stop docker-java-mysql # mysql 중지
+docker container stop docker-java-redis # redis 중지
 ```
